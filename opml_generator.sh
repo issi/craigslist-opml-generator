@@ -432,7 +432,7 @@ echo '    <dateCreated>Sun, 24 Jul 2016 00:28:46 -0500</dateCreated>'
 echo '    <ownerEmail>hisaaki_isihara@yahoo.co.jp</ownerEmail>'
 echo '  </head>'
 echo '  <body>'
-echo '  <outline text="Craigslist Search Sesults" title="Craigslist Search Sesults">'
+echo '  <outline text="Craigslist Search Results" title="Craigslist Search Results">'
 
 for s in $STATES; do
   echo "    <outline text=\"Craigslist $s\" title=\"Craigslist $s\" type=\"rss\" xmlUrl=\"http://$s.craigslist.org/search/mca?format=rss&amp;query=$QUERY\" htmlUrl=\"https://$s.craigslist.org/search/mca?&amp;query=$QUERY\" />"
