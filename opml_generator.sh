@@ -451,7 +451,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'
 echo '<opml version="1.0">'
 echo '  <head>'
 echo '    <title>RSS subscriptions for hisaaki_isihara@yahoo.co.jp</title>'
-echo '    <dateCreated>`LANG=C date`</dateCreated>'
+echo ""    <dateCreated>`LANG=C date`</dateCreated>"
 echo '    <ownerEmail>nobody@example.com</ownerEmail>'
 echo '  </head>'
 echo '  <body>'
