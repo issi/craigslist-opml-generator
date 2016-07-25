@@ -1,5 +1,8 @@
 #!/bin/bash
 
+IFS='
+'
+
 STATES="
   auburn
   bham
@@ -419,23 +422,46 @@ STATES="
   wausau
 "
 
-QUERY="kz1000|"kz 1000"|Kh500|"500 h1"|"750 h2"|"kawasaki h1"|kz900|"kz 900 Z1"|z1r|z1-r|kz1000r|"kz 1000r"|kz1000j|"kz 1000j"|kz1100r|cb400f|cb1100r|gs1000s|gt380|xlcr"
+QUERIES='
+  kz1000
+  "kz 1000"
+  Kh500
+  "500 h1"
+  "750 h2"
+  "kawasaki h1"
+  kz900
+  "kz 900 Z1"
+  z1r
+  z1-r
+  kz1000r
+  "kz 1000r"
+  kz1000j
+  "kz 1000j"
+  kz1100r
+  cb400f
+  cb1100r
+  gs1000s
+  gt380
+  xlcr
+'
 
-QUERY=`echo $QUERY|perl -MURI::Escape -lne 'print uri_escape($_)'`
 
 
 echo '<?xml version="1.0" encoding="UTF-8"?>'
 echo '<opml version="1.0">'
 echo '  <head>'
 echo '    <title>RSS subscriptions for hisaaki_isihara@yahoo.co.jp</title>'
-echo     <dateCreated>`LANG=C date`</dateCreated>"
+echo '    <dateCreated>`LANG=C date`</dateCreated>'
 echo '    <ownerEmail>nobody@example.com</ownerEmail>'
 echo '  </head>'
 echo '  <body>'
-echo '  <outline text="Craigslist Search Results" title="Craigslist Search Results">'
+echo '  <outline text="Craigslist Search Sesults" title="Craigslist Search Sesults">'
 
 for s in $STATES; do
-  echo "    <outline text=\"Craigslist $s\" title=\"Craigslist $s\" type=\"rss\" xmlUrl=\"http://$s.craigslist.org/search/mca?format=rss&amp;query=$QUERY\" htmlUrl=\"https://$s.craigslist.org/search/mca?&amp;query=$QUERY\" />"
+  for q in $QUERIES; do
+  q=`echo $q|perl -MURI::Escape -lne 'print uri_escape($_)'`
+  echo "    <outline text=\"Craigslist $s\" title=\"Craigslist $s\" type=\"rss\" xmlUrl=\"http://$s.craigslist.org/search/mca?format=rss&amp;query=$q\" htmlUrl=\"https://$s.craigslist.org/search/mca?&amp;query=$q\" />"
+  done
 done
 echo '    </outline>'
 echo '  </body>'
