@@ -419,7 +419,7 @@ STATES="
   wausau
 "
 
-QUERY="kz1000%7C%22kz%201000%22%7CKh500%7C%22500%20h1%22%7C%22750%20h2%22%7C%22kawasaki%20h1%22%7Ckz900%7C%22kz%20900%20Z1%22%7Cz1r%7Cz1-r%7Ckz1000r%7C%22kz%201000r%22%7Ckz1000j%7C%22kz%201000j%22%7Ckz1100r%7Ccb400f%7Ccb1100r%7Cgs1000s%7Cgt380%7Cxlcr"
+QUERY="kz1000|"kz 1000"|Kh500|"500 h1"|"750 h2"|"kawasaki h1"|kz900|"kz 900 Z1"|z1r|z1-r|kz1000r|"kz 1000r"|kz1000j|"kz 1000j"|kz1100r|cb400f|cb1100r|gs1000s|gt380|xlcr"
 
 QUERY=`echo $QUERY|perl -MURI::Escape -lne 'print uri_escape($_)'`
 
