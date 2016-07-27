@@ -8,14 +8,14 @@ echo "    <dateCreated>`LANG=C date`</dateCreated>"
 echo '    <ownerEmail>nobody@example.com</ownerEmail>'
 echo '  </head>'
 echo '  <body>'
-echo '  <outline text="Craigslist Search Results" title="Craigslist Search Results">'
-
 while read QUERY; do
   ENCODED_QUERIES=`echo $QUERY|perl -MURI::Escape -lne 'print uri_escape($_)'`
+  echo "    <outline text=\"Craigslist Search Results `echo $QUERY|tr -d '"'`\" title=\"Craigslist Search Results `echo $QUERY|tr -d '"'`\">"
   while read REGION; do
-    echo "    <outline text=\"Craigslist $REGION\" title=\"Craigslist $ENCODED_QUERIES\" type=\"rss\" xmlUrl=\"http://$REGION.craigslist.org/search/mca?format=rss&amp;query=$ENCODED_QUERIES\" htmlUrl=\"https://$REGION.craigslist.org/search/mca?&amp;query=$ENCODED_QUERIES\" />"
+    echo "      <outline text=\"Craigslist $REGION\" title=\"Craigslist $ENCODED_QUERIES\" type=\"rss\" xmlUrl=\"http://$REGION.craigslist.org/search/mca?format=rss&amp;query=$ENCODED_QUERIES\" htmlUrl=\"https://$REGION.craigslist.org/search/mca?&amp;query=$ENCODED_QUERIES\" />"
   done < regions.txt
-done < queries.txt | sort
+echo '    </outline>'
+done < queries.txt
 
 echo '    </outline>'
 echo '  </body>'
