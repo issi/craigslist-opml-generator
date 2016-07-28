@@ -1,6 +1,6 @@
 # Abstract
-The purpose of this program is to generate a list of RSS feed using shell script.
-This generated list is written by opml format. Therefore, it can be used for RSS readers such as "Reeder, Feedbin".
+  The purpose of this program is to generate a list of RSS feeds using shell script.
+This generated list is written by opml format. Therefore, the list can be used for RSS reader APPs such as "Reeder, Feedbin".
 In addition, one of the benefits is for us to change searching words adding the Query List.
 Another benefit is that the list is sorted by each query. So, we will not be bothered by any sorting works.
 
