@@ -6,7 +6,11 @@ Another benefit is that the list is sorted by each query. So, we will not be bot
 
 # Usage
 
-1. Open the terminal.app
-1. `curl -OL https://gist.github.com/kotashiratsuka/0d4393b36f6964be993e0ca558d979d1/raw/2213e5e71d7f39bd4f63913337cc5f77503ae846/opml_generator.sh`
-1. `./opml_generator.sh > export.opml`
-1. import `export.opml` your rss feed services
+1. `git clone git@github.com:issi/craigslist-opml-generator.git`
+1. `cd craigslist-opml-generator`
+1. `./opml_generator.sh > craigslist.opml`
+1. Raunch Reeder on MacOS X
+1. Menu -> Preferences -> Accounts -> Add Account -> RSS (local no syncing) and if other settings more
+1. Menu -> Subscriptions -> Import from OPML..
+1. Select a file Dialog -> `craigslist.opml`
+1. dane
